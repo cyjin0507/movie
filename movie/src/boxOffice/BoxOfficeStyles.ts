@@ -6,6 +6,7 @@ export const BoxOfficeItemContainer = styled.div`
     background-color: white;
     border-radius: 5px;
     position: relative;
+    text-align: center;
 
     ${'img'} {
         border-radius: 5px;

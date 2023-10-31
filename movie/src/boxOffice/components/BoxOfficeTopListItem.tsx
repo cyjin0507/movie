@@ -1,22 +1,30 @@
+import { useSetRecoilState } from "recoil";
 import { BoxOfficeItemContainer, BoxOfficeItemIntroduce, Rank } from "../BoxOfficeStyles";
+import { appViewAtom, selectedMovieInfo } from "../../util/recoils/utilRecoil";
+import { APP_VIEW } from "../../constants";
+import { dailyBoxOfficeItem } from "../../types";
 
 export default function BoxOfficeTopListItem(
     {
-        movieNm,
-        openDt,
-        rank,
+        boxOfficeItem,
     } : {
-        movieNm : string;
-        openDt : string;
-        rank : string;
+        boxOfficeItem: dailyBoxOfficeItem;
     }
 ) {
-    return <BoxOfficeItemContainer>
+    const setAppView = useSetRecoilState(appViewAtom);
+    const setSelectedMovieInfo = useSetRecoilState(selectedMovieInfo);
+
+    const handleMoveMovieIntroView = () => {
+        setAppView(APP_VIEW.movieIntro)
+        setSelectedMovieInfo(boxOfficeItem)
+    }
+
+    return <BoxOfficeItemContainer onClick={handleMoveMovieIntroView}>
         <img src="https://via.placeholder.com/160x200" alt="" />
-        <Rank $rankType="top">{rank}</Rank>
+        <Rank $rankType="top">{boxOfficeItem.rank}</Rank>
         <BoxOfficeItemIntroduce>
-            <h5>{movieNm}</h5>
-            <p>{openDt}</p>
+            <h5>{boxOfficeItem.movieNm}</h5>
+            <p>{boxOfficeItem.openDt}</p>
         </BoxOfficeItemIntroduce>
     </BoxOfficeItemContainer>
 }

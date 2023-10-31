@@ -15,9 +15,7 @@ export default function BoxOfficeOtherList(
             boxOfficeOtherList?.map((boxOfficeItem, key) => {
                 return <BoxOfficeOtherListItem
                     key={key}
-                    movieNm={boxOfficeItem.movieNm}
-                    openDt={boxOfficeItem.openDt}
-                    rank={boxOfficeItem.rank}
+                    boxOfficeItem={boxOfficeItem}
                 />
             })
         }
@@ -29,6 +27,6 @@ const BoxOfficeOtherListContainer = styled.div`
     margin:auto;
     display: flex;
     justify-content: space-between;
-    margin: 40px;
+    margin-top: 40px;
 `;
 

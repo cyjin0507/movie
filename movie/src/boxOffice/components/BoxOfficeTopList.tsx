@@ -15,9 +15,7 @@ export default function BoxOfficeTopList(
             boxOfficeTopList?.map((boxOfficeItem, key)=> {
                 return <BoxOfficeTopListItem
                     key={key}
-                    movieNm={boxOfficeItem.movieNm}
-                    openDt={boxOfficeItem.openDt}
-                    rank={boxOfficeItem.rank}
+                    boxOfficeItem={boxOfficeItem}
                 />
             })
         }
