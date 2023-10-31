@@ -5,12 +5,6 @@ export interface boxOffice {
 
 export interface boxOfficeResult {
     boxofficeType : string;
-    dailyBoxOfficeList : dailyBoxOfficeList[];
-    showRange : string;
-}
-
-
-export interface dailyBoxOfficeList {
     dailyBoxOfficeList : [
         dailyBoxOfficeItem,
         dailyBoxOfficeItem,
@@ -22,9 +16,25 @@ export interface dailyBoxOfficeList {
         dailyBoxOfficeItem,
         dailyBoxOfficeItem,
         dailyBoxOfficeItem,
-    ]
+    ];
+    showRange : string;
 }
 
+
+// export interface dailyBoxOfficeList {
+//     dailyBoxOfficeList : [
+//         dailyBoxOfficeItem,
+//         dailyBoxOfficeItem,
+//         dailyBoxOfficeItem,
+//         dailyBoxOfficeItem,
+//         dailyBoxOfficeItem,
+//         dailyBoxOfficeItem,
+//         dailyBoxOfficeItem,
+//         dailyBoxOfficeItem,
+//         dailyBoxOfficeItem,
+//         dailyBoxOfficeItem,
+//     ]
+// }
 
 export interface dailyBoxOfficeItem {
     audiAcc : string;
