@@ -13,21 +13,21 @@ export default function BoxOfficeTopList(
     return <BoxOfficeTopListContainer>
         {
             boxOfficeTopList?.map((boxOfficeItem)=> {
-                
-                
-                return "Test"
-                // return <BoxOfficeTopListItem
-                //     movieNm={boxOfficeItem.movieNm}
-                //     openDt={boxOfficeItem.openDt}
-                //     rank={boxOfficeItem.rank}
-                // />
+                return <BoxOfficeTopListItem
+                    movieNm={boxOfficeItem.movieNm}
+                    openDt={boxOfficeItem.openDt}
+                    rank={boxOfficeItem.rank}
+                />
             })
         }
     </BoxOfficeTopListContainer>
 }
 
 const BoxOfficeTopListContainer = styled.div`
-    width:500px;
+    width:560px;
     margin:auto;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
 `;
 

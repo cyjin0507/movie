@@ -1,6 +1,6 @@
 import { BoxOfficeItemContainer, BoxOfficeItemIntroduce, Rank } from "../BoxOfficeStyles";
 
-export default function BoxOfficeTopListItem(
+export default function BoxOfficeOtherListItem(
     {
         movieNm,
         openDt,
