@@ -4,7 +4,7 @@ import { VIDEO_URL } from "../../constants";
 export default function MovieIntroVideoBox() {
 
     return <MovieIntroVideo>
-        <video src={VIDEO_URL} autoPlay={true}></video>
+        <video src={VIDEO_URL} autoPlay={true} loop></video>
     </MovieIntroVideo>
 }
 

@@ -3,7 +3,13 @@ import { appViewAtom, selectedMovieInfo } from "../../util/recoils/utilRecoil";
 import styled from "styled-components";
 import { APP_VIEW } from "../../constants";
 
-export default function MovieInfo() {
+export default function MovieInfo(
+    {
+        setIsSecurityModal,
+    } : {
+        setIsSecurityModal : (bool : boolean)=> void;
+    }
+) {
     const [movieInfo, unselectedMovieInfo] = useRecoilState(selectedMovieInfo);
     const setAppView = useSetRecoilState(appViewAtom);
 
@@ -28,7 +34,7 @@ export default function MovieInfo() {
         </div>
         <div>
             <div>
-                <button>예매하기</button>
+                <button onClick={()=>setIsSecurityModal(true)}>예매하기</button>
                 <button>평점작성</button>
                 <button onClick={handleMovieListPage}>닫기</button>
             </div>

@@ -35,7 +35,7 @@ export default function Modal(
 const Background = styled.div<{ $isOpen: boolean }>`
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(113, 113, 113, 0.6);
   position: fixed;
   opacity: ${(props) => props.$isOpen ? 1 : 0};
   top: 0;
@@ -44,10 +44,14 @@ const Background = styled.div<{ $isOpen: boolean }>`
   left: 0;
 `;
 const ModalDIV = styled.div`
-  width: 400px;
+  width: 450px;
   max-width: calc(100% - 40px);
   height: 300px;
-  background-color: white;
+  background-color: #242424;
   border-radius: 10px;
   padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `
