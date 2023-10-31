@@ -12,8 +12,9 @@ export default function BoxOfficeTopList(
 
     return <BoxOfficeTopListContainer>
         {
-            boxOfficeTopList?.map((boxOfficeItem)=> {
+            boxOfficeTopList?.map((boxOfficeItem, key)=> {
                 return <BoxOfficeTopListItem
+                    key={key}
                     movieNm={boxOfficeItem.movieNm}
                     openDt={boxOfficeItem.openDt}
                     rank={boxOfficeItem.rank}
@@ -26,7 +27,7 @@ export default function BoxOfficeTopList(
 const BoxOfficeTopListContainer = styled.div`
     width:560px;
     margin:auto;
-    margin-top: 100px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
 `;

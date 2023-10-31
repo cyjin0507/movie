@@ -1,3 +1,5 @@
+import { APP_VIEW } from "./constants";
+
 export interface boxOffice {
     boxOfficeResult : boxOfficeResult
 }
@@ -20,22 +22,6 @@ export interface boxOfficeResult {
     showRange : string;
 }
 
-
-// export interface dailyBoxOfficeList {
-//     dailyBoxOfficeList : [
-//         dailyBoxOfficeItem,
-//         dailyBoxOfficeItem,
-//         dailyBoxOfficeItem,
-//         dailyBoxOfficeItem,
-//         dailyBoxOfficeItem,
-//         dailyBoxOfficeItem,
-//         dailyBoxOfficeItem,
-//         dailyBoxOfficeItem,
-//         dailyBoxOfficeItem,
-//         dailyBoxOfficeItem,
-//     ]
-// }
-
 export interface dailyBoxOfficeItem {
     audiAcc : string;
     audiChange : string;
@@ -56,3 +42,5 @@ export interface dailyBoxOfficeItem {
     scrnCnt : string;
     showCnt : string;
 }
+
+export type AppView = typeof APP_VIEW[keyof typeof APP_VIEW];

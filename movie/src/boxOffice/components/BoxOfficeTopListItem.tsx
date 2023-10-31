@@ -13,7 +13,7 @@ export default function BoxOfficeTopListItem(
 ) {
     return <BoxOfficeItemContainer>
         <img src="https://via.placeholder.com/160x200" alt="" />
-        <Rank>{rank}</Rank>
+        <Rank $rankType="top">{rank}</Rank>
         <BoxOfficeItemIntroduce>
             <h5>{movieNm}</h5>
             <p>{openDt}</p>

@@ -12,14 +12,14 @@ export const BoxOfficeItemContainer = styled.div`
     }
 `
 
-export const Rank = styled.div`
+export const Rank = styled.div<{$rankType:'top'|'other'}>`
     position: absolute;
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
     font-size: 45px;
     font-weight: bold;
-    color: rgb(251,194,044);
+    color: ${(props)=>props.$rankType === "top" ? 'rgb(251,194,044)' : '#aaa'};
 `
 
 export const BoxOfficeItemIntroduce = styled.div`

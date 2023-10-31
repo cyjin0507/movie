@@ -11,6 +11,8 @@ export default function BoxOfficeView() {
     async function getAPIBoxOfficeList() {
         const today = "20231029";
         const boxOffice = await getBoxOfficeList(today);
+        console.log(boxOffice);
+        
 
         setBoxOfficeList({...boxOffice})
     }
@@ -27,7 +29,7 @@ export default function BoxOfficeView() {
         {
             boxOfficeList ? 
                 <div>
-                    <h3>박스오피스 <span>TOP10</span></h3>
+                    <h2>박스오피스 <span>TOP10</span></h2>
                     <BoxOfficeTopList
                         boxOfficeTopList={boxOfficeTopList}/>
                     <BoxOfficeOtherList

@@ -12,8 +12,9 @@ export default function BoxOfficeOtherList(
 
     return <BoxOfficeOtherListContainer>
         {
-            boxOfficeOtherList?.map((boxOfficeItem) => {
+            boxOfficeOtherList?.map((boxOfficeItem, key) => {
                 return <BoxOfficeOtherListItem
+                    key={key}
                     movieNm={boxOfficeItem.movieNm}
                     openDt={boxOfficeItem.openDt}
                     rank={boxOfficeItem.rank}
