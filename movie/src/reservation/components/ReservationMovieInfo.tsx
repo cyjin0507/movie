@@ -6,7 +6,8 @@ import { APP_VIEW } from "../../constants";
 export default function ReservationMovieInfo() {
     const movieInfo = useRecoilValue(selectedMovieInfo);
     const setAppView = useSetRecoilState(appViewAtom);
-    
+
+
     return <MovieInfoContainer>
         <img src="https://via.placeholder.com/160x200" alt="" />
         <h2>{movieInfo?.movieNm}</h2>

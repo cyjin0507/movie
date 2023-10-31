@@ -4,7 +4,6 @@ export interface boxOffice {
     boxOfficeResult : boxOfficeResult
 }
 
-
 export interface boxOfficeResult {
     boxofficeType : string;
     dailyBoxOfficeList : [
@@ -44,3 +43,8 @@ export interface dailyBoxOfficeItem {
 }
 
 export type AppView = typeof APP_VIEW[keyof typeof APP_VIEW];
+
+
+export interface reservationData {
+    [audiAcc : string] : {}
+}

@@ -1,8 +1,23 @@
 import styled from "styled-components"
 import TheatorSeat from "./TheatorSeat";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { reservationList, selectedMovieInfo } from "../../../util/recoils/utilRecoil";
 
 export default function TheatorArea() {
     const row = 10;
+
+    const movieInfo = useRecoilValue(selectedMovieInfo);
+    const [reservationData, setReservationData] = useRecoilState(reservationList);
+
+    // 이부분 오류 수정 필요
+    if(reservationData[movieInfo?.audiAcc ?? ""] === undefined) {
+        reservationData[movieInfo?.audiAcc ?? ""] = {
+            seatNumber : "fd"
+        }
+        
+        setReservationData({...reservationData})
+    }
+    
 
     return <TheatorSeatContainer>
         <TheatorSideSeat>
