@@ -24,8 +24,9 @@ export default function MakeReservation() {
 
     const handleSaveReservation = () => {
         const basicData = Storage.getReservationData()[movieInfo?.audiAcc ?? ""];
-        Object.assign(copyReservationData[movieInfo?.audiAcc ?? ""], basicData)
         Object.assign(copyReservationData, Storage.getReservationData())
+        Object.assign(copyReservationData[movieInfo?.audiAcc ?? ""], basicData)
+        
         
         alert("예매가 완료되었습니다.");
         setReservationData({});
@@ -37,7 +38,11 @@ export default function MakeReservation() {
             {
                 ReservationArr.map((seat, n) => {
 
-                    return seat[1] ? <SelectedSeatNumber key={n} seatNumber={seat[0]} handleCancelReservation={() => handleCancelReservation(seat[0])} /> : <></>
+                    return seat[1] ? <SelectedSeatNumber 
+                                        key={n} 
+                                        seatNumber={seat[0]} 
+                                        handleCancelReservation={() => handleCancelReservation(seat[0])} /> 
+                                    : <></>
                 })
             }
         </TemporaryReservationList>
