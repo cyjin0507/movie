@@ -13,7 +13,7 @@ export default function SecurityModal(
     }
 ) {
     const setAppView = useSetRecoilState(appViewAtom);
-    
+
     const handleMoveReservationPage = () => {
         setAppView(APP_VIEW.movieReservation);
         handleOnClose(false);

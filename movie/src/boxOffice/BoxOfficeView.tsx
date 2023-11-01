@@ -4,6 +4,7 @@ import { boxOffice } from "../types";
 import BoxOfficeTopList from "./components/BoxOfficeTopList";
 import Loading from "../util/components/Loading";
 import BoxOfficeOtherList from "./components/BoxOfficeOtherList";
+import styled from "styled-components";
 
 export default function BoxOfficeView() {
     const [boxOfficeList, setBoxOfficeList] = useState<boxOffice | null>(null);
@@ -11,8 +12,6 @@ export default function BoxOfficeView() {
     async function getAPIBoxOfficeList() {
         const today = "20231029";
         const boxOffice = await getBoxOfficeList(today);
-        console.log(boxOffice);
-        
 
         setBoxOfficeList({...boxOffice})
     }
@@ -28,14 +27,14 @@ export default function BoxOfficeView() {
     return <>
         {
             boxOfficeList ? 
-                <div>
-                    <h2>박스오피스 <span>TOP10</span></h2>
+                <BoxOfficeContainer>
+                    <h2 style={{textAlign : "center"}}>박스오피스 <span>TOP10</span></h2>
                     <BoxOfficeTopList
                         boxOfficeTopList={boxOfficeTopList}/>
                     <BoxOfficeOtherList
                         boxOfficeOtherList={boxOfficeOtherList}
                     />
-                </div>
+                </BoxOfficeContainer>
 
                 : <Loading />
         
@@ -44,4 +43,9 @@ export default function BoxOfficeView() {
         
     </>
 }
+
+const BoxOfficeContainer = styled.div`
+    width: 1220px;
+    margin: auto;
+`
 
