@@ -23,14 +23,14 @@ export default function MakeReservation() {
     }
 
     const handleSaveReservation = () => {
-        const basicData = Storage.getReservationData()[movieInfo?.audiAcc ?? ""];
-        Object.assign(copyReservationData, Storage.getReservationData())
-        Object.assign(copyReservationData[movieInfo?.audiAcc ?? ""], basicData)
+        const basicData = Storage.getReservationData();
         
+        Object.assign(copyReservationData[movieInfo?.audiAcc ?? ""], basicData[movieInfo?.audiAcc ?? ""])
+        basicData[movieInfo?.audiAcc ?? ""] = copyReservationData[movieInfo?.audiAcc ?? ""]
         
         alert("예매가 완료되었습니다.");
         setReservationData({});
-        Storage.setReservationAppData(copyReservationData);
+        Storage.setReservationAppData(basicData);
     }
 
     return <>
