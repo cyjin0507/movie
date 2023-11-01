@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import ReservationMovieInfo from "./components/ReservationMovieInfo"
+import ReservationMovieInfo from "../util/components/ReservationMovieInfo"
 import Theator from "./components/theator/Theator"
 
 export default function ReservationView() {

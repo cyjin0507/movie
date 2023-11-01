@@ -1,8 +1,8 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { appViewAtom, selectedMovieInfo } from "../../util/recoils/utilRecoil";
+import { appViewAtom, selectedMovieInfo } from "../recoils/utilRecoil";
 import styled from "styled-components";
 import { APP_VIEW, POSTER_IMAGE_URL } from "../../constants";
-import MakeReservation from "./MakeReservation";
+import MakeReservation from "../../reservation/components/MakeReservation";
 
 export default function ReservationMovieInfo() {
     const movieInfo = useRecoilValue(selectedMovieInfo);

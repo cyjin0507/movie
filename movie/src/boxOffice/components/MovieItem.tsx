@@ -11,7 +11,6 @@ export default function MovieItem(
         movieInfo : dailyBoxOfficeItem;
     }
 ) {
-
     const setAppView = useSetRecoilState(appViewAtom);
     const setSelectedMovieInfo = useSetRecoilState(selectedMovieInfo);
 
@@ -20,14 +19,24 @@ export default function MovieItem(
         setSelectedMovieInfo(movieInfo)
     }
 
-    return <div className="slider" onClick={handleMoveMovieIntroView}>
+    return <div className="slider" onClick={handleMoveMovieIntroView} onDrag={(e)=> e.preventDefault()}>
         <img src={POSTER_IMAGE_URL[parseInt(movieInfo.rank) - 1].url} alt="movie" />
         <MoviceInfoContainer>
             <h5>{movieInfo.movieNm}</h5>
             <p>{movieInfo.openDt}</p>
         </MoviceInfoContainer>
+        <Rank>{movieInfo.rank}</Rank>
     </div>
 }
+
+const Rank = styled.div`
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-weight: bold;
+    font-size: 50px;
+`
 
 const MoviceInfoContainer = styled.div`
     position: absolute;

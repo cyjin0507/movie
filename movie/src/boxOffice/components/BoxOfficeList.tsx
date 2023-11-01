@@ -1,8 +1,6 @@
-import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { boxOffice, boxOfficeResult, dailyBoxOfficeItem } from "../../types";
-import { POSTER_IMAGE_URL } from "../../constants";
+import { dailyBoxOfficeItem } from "../../types";
 import MovieItem from "./MovieItem";
 const responsive = {
   desktop: {
@@ -29,8 +27,6 @@ export default function BoxOfficeList(
         boxOfficeData : dailyBoxOfficeItem[]
     }
 ) {
-    console.log(boxOfficeData);
-    
 
   return (
     <div className="parent">

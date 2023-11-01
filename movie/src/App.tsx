@@ -11,7 +11,6 @@ function App() {
 
   return <>
     {
-      // <Slider></Slider>
       appView === APP_VIEW.movieList
                   ? <BoxOfficeView />
                   : appView === APP_VIEW.movieIntro
