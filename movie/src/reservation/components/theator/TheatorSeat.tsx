@@ -30,9 +30,9 @@ export default function TheatorSeat(
         copyReservationData[audiAcc ?? ""][seatNumber] = !reservationState
         setReservationData(copyReservationData)
     }
-    // console.log(getSeatReservationStatus(seatNumber, audiAcc ?? ""));
-    
-    return <Seat onClick={temporarySeatReservation} disabled={false} $state={reservationState}>
+
+
+    return <Seat onClick={temporarySeatReservation} disabled={getSeatReservationStatus(seatNumber, audiAcc ?? "")} $state={reservationState}>
         {seatNumber}
     </Seat>
 }

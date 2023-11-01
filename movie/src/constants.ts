@@ -6,4 +6,4 @@ export const APP_VIEW = {
     movieReservation : "MOVIE_RESERVATION",
 } as const;
 
-export const POINT_COLOR = "#FF3399"
+export const POINT_COLOR = "#C40062"

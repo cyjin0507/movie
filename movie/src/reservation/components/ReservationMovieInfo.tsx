@@ -13,7 +13,7 @@ export default function ReservationMovieInfo() {
         <img src="https://via.placeholder.com/160x200" alt="" />
         <h2>{movieInfo?.movieNm}</h2>
         <p>{movieInfo?.openDt}</p>
-        <button onClick={()=> setAppView(APP_VIEW.movieIntro)}>예약취소</button>
+        <button onClick={()=> setAppView(APP_VIEW.movieIntro)}>이전</button>
 
         <MakeReservation />
 
