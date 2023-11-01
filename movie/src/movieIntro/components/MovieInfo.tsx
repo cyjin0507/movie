@@ -28,7 +28,7 @@ export default function MovieInfo(
                 </p>
                 <p>
                     <span>누적 관람객 : </span>
-                    {movieInfo?.audiCnt}명
+                    {movieInfo?.audiAcc}명
                 </p>
             </div>
         </div>

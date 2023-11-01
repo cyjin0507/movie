@@ -12,7 +12,8 @@ export default function BoxOfficeView() {
     async function getAPIBoxOfficeList() {
         const today = "20231029";
         const boxOffice = await getBoxOfficeList(today);
-
+        console.log(boxOffice);
+        
         setBoxOfficeList({...boxOffice})
     }
 

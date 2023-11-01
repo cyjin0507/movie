@@ -13,7 +13,7 @@ export default function TheatorArea() {
         <TheatorSideSeat>
             {
                 Array.from({length: (row * 2)}).map((_,n)=> {
-                    return <TheatorSeat key={n} seatNumber={"A" + (n+1)} audiAcc={movieInfo?.audiAcc}/>
+                    return <TheatorSeat key={n} seatNumber={"A" + (n+1)} movieCd={movieInfo?.movieCd}/>
                 })
             }
         </TheatorSideSeat>
@@ -21,7 +21,7 @@ export default function TheatorArea() {
         <TheatorCenterSeat>
             {
                 Array.from({length: (row * 7)}).map((_,n)=> {
-                    return <TheatorSeat key={n} seatNumber={"B" + (n+1)} audiAcc={movieInfo?.audiAcc}/>
+                    return <TheatorSeat key={n} seatNumber={"B" + (n+1)} movieCd={movieInfo?.movieCd}/>
                 })
             }
         </TheatorCenterSeat>
@@ -29,7 +29,7 @@ export default function TheatorArea() {
         <TheatorSideSeat>
             {
                 Array.from({length: (row * 2)}).map((_,n)=> {
-                    return <TheatorSeat key={n} seatNumber={"C" + (n+1)} audiAcc={movieInfo?.audiAcc}/>
+                    return <TheatorSeat key={n} seatNumber={"C" + (n+1)} movieCd={movieInfo?.movieCd}/>
                 })
             }
         </TheatorSideSeat>

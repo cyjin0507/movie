@@ -46,7 +46,7 @@ export type AppView = typeof APP_VIEW[keyof typeof APP_VIEW];
 
 
 export interface reservationData {
-    [audiAcc : string] : reservationSeatList
+    [movieCd : string] : reservationSeatList
 }
 
 export interface reservationSeatList {
