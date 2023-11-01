@@ -2,6 +2,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { appViewAtom, selectedMovieInfo } from "../../util/recoils/utilRecoil";
 import styled from "styled-components";
 import { APP_VIEW } from "../../constants";
+import MakeReservation from "./MakeReservation";
 
 export default function ReservationMovieInfo() {
     const movieInfo = useRecoilValue(selectedMovieInfo);
@@ -13,6 +14,9 @@ export default function ReservationMovieInfo() {
         <h2>{movieInfo?.movieNm}</h2>
         <p>{movieInfo?.openDt}</p>
         <button onClick={()=> setAppView(APP_VIEW.movieIntro)}>예약취소</button>
+
+        <MakeReservation />
+
     </MovieInfoContainer>
 }
 
