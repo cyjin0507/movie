@@ -16,7 +16,7 @@ export default function CommentInput() {
         if(copyCommentListData[movieCd] === undefined) {
             copyCommentListData[movieCd] = [];
         }
-        
+
         copyCommentListData[movieCd].push({
             comment : commentInput,
         })

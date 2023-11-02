@@ -12,7 +12,7 @@ export default function CommentBox() {
 
 const CommentBoxContainer = styled.div`
     width: 700px;
-    height: 450px;
+    height: 260px;
     background-color: #ffffff11;
     border-radius: 10px;
     position: relative;

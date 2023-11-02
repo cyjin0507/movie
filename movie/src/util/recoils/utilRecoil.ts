@@ -24,3 +24,8 @@ export const commentList = atom<movieCommentData>({
     key : 'commentData',
     default: Storage.getCommentData()
 })
+
+export const keyPadInput = atom({
+    key : 'keyPad',
+    default: ""
+})

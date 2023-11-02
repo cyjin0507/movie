@@ -1,12 +1,16 @@
 import styled from "styled-components"
 import ReservationMovieInfo from "../util/components/ReservationMovieInfo"
 import CommentBox from "./components/comment/CommentBox"
+import GradeBox from "./components/grade/GradeBox"
 
 export default function GradeView() {
 
     return <GradeContainer>
         <ReservationMovieInfo />
-        <CommentBox />
+        <MovieGradeArea>
+            <GradeBox />
+            <CommentBox />
+        </MovieGradeArea>
     </GradeContainer>
 }
 
@@ -16,4 +20,8 @@ const GradeContainer = styled.div`
     justify-content: space-between;
     margin: auto;
     margin-top: 50px;
+`
+
+const MovieGradeArea = styled.div`
+    
 `

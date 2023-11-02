@@ -20,7 +20,7 @@ export default function CommentItemList() {
 }
 
 const CommentItemListContainer = styled.div`
-    height: 400px;
+    height: 200px;
     padding: 20px 30px;
     padding-bottom: 40px;
     overflow-y: auto;

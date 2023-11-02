@@ -46,7 +46,7 @@ const Background = styled.div<{ $isOpen: boolean }>`
 const ModalDIV = styled.div`
   width: 450px;
   max-width: calc(100% - 40px);
-  height: 300px;
+  height: 350px;
   background-color: #242424;
   border-radius: 10px;
   padding: 20px;
