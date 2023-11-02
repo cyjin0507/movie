@@ -35,7 +35,7 @@ export default function MovieInfo(
         <div>
             <div>
                 <button onClick={()=>setIsSecurityModal(true)}>예매하기</button>
-                <button>평점작성</button>
+                <button onClick={()=>setAppView(APP_VIEW.movieGrade)}>평점작성</button>
                 <button onClick={handleMovieListPage}>닫기</button>
             </div>
         </div>

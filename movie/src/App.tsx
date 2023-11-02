@@ -5,6 +5,7 @@ import { appViewAtom } from './util/recoils/utilRecoil';
 import { APP_VIEW } from './constants';
 import MovieIntroView from './movieIntro/MovieIntroView';
 import ReservationView from './reservation/ReservationView';
+import GradeView from './grade/GradeView';
 
 function App() {
   const appView = useRecoilValue(appViewAtom);
@@ -15,7 +16,9 @@ function App() {
                   ? <BoxOfficeView />
                   : appView === APP_VIEW.movieIntro
                     ? <MovieIntroView />
-                    : <ReservationView />
+                      : appView === APP_VIEW.movieReservation ?
+                        <ReservationView />
+                        : <GradeView />
     }
   </>
 }

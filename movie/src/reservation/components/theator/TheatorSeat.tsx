@@ -31,7 +31,6 @@ export default function TheatorSeat(
         setReservationData(copyReservationData)
     }
 
-
     return <Seat onClick={temporarySeatReservation} disabled={getSeatReservationStatus(seatNumber, movieCd ?? "")} $state={reservationState}>
         {seatNumber}
     </Seat>
