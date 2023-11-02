@@ -4,15 +4,16 @@ import { boxOffice } from "../types";
 import Loading from "../util/components/Loading";
 import BoxOfficeList from "./components/BoxOfficeList";
 import styled from "styled-components";
+import dayjs from "dayjs";
 
 export default function BoxOfficeView() {
     const [boxOfficeList, setBoxOfficeList] = useState<boxOffice | null>(null);
 
     async function getAPIBoxOfficeList() {
-        const today = "20231101";
+        const today = dayjs().subtract(1, "d").format('YYYYMMDD');
         const boxOffice = await getBoxOfficeList(today);
-        
-        setBoxOfficeList({...boxOffice})
+
+        setBoxOfficeList({...boxOffice});
     }
 
     useEffect(()=> {
@@ -28,8 +29,6 @@ export default function BoxOfficeView() {
                 </BoxOfficeContainer>
 
                 : <Loading />
-
-        
         }
         
     </>

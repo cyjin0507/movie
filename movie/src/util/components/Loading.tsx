@@ -22,7 +22,7 @@ const LoadingDot = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: aqua;
+    background-color: #c93e6a;
     @keyframes loadingAnimation {
         0% {
             margin-top: 0;

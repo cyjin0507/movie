@@ -11,7 +11,7 @@ export default function Theator() {
 
 const TheatorBox = styled.div`
     width: 700px;
-    height: 650px;
+    height: 720px;
     background-color: #333;
     border: 1px solid #4e4e4e;
     border-radius: 5px;
