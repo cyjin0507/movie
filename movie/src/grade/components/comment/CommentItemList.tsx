@@ -12,7 +12,7 @@ export default function CommentItemList() {
 
     return <CommentItemListContainer>
         {
-            findCommentListData.map((comment, n) => {
+            [...findCommentListData].reverse().map((comment, n) => {
                 return <CommentItem comment={comment.comment} key={n} />
             })
         }
@@ -20,9 +20,9 @@ export default function CommentItemList() {
 }
 
 const CommentItemListContainer = styled.div`
-    height: 200px;
+    height: 230px;
     padding: 20px 30px;
-    padding-bottom: 40px;
+    padding-bottom: 0px;
     overflow-y: auto;
     display: flex;
     flex-direction: column-reverse;
