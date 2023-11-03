@@ -8,8 +8,8 @@ export default function GradeView() {
     return <GradeContainer>
         <ReservationMovieInfo />
         <MovieGradeArea>
-            <GradeBox />
             <CommentBox />
+            <GradeBox />
         </MovieGradeArea>
     </GradeContainer>
 }
