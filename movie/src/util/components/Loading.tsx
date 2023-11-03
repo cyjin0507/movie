@@ -40,10 +40,10 @@ const LoadingDot = styled.div`
     animation: loadingAnimation 1s linear infinite;
 
     &:nth-child(2) {
-        animation-delay: .3s;
+        animation-delay: .33333s;
     }
 
     &:nth-child(3) {
-        animation-delay: .6s;
+        animation-delay: .66666s;
     }
 `

@@ -17,6 +17,12 @@ export default function StarBox() {
 
     const handleStarSave = () => {
         const copyGradeListData = JSON.parse(JSON.stringify(gradeListData));
+
+        if(selectedStarInput === -1) {
+            alert("평점을 선택해주세요.");
+            return;
+        }
+
         if(copyGradeListData[movieCd] === undefined) {
             copyGradeListData[movieCd] = {
                 movieCommentList : [],

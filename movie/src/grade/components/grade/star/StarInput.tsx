@@ -11,9 +11,11 @@ export default function StarInput(
         selectedStarInput: number;
     }
 ) {
+    const fillStar = '★';
+    const emptyStar = '☆';
     
     return <Star onMouseOver={()=>handleStarControl(starNumber)}>{
-        selectedStarInput >= starNumber ? '★' : '☆'
+        selectedStarInput >= starNumber ? fillStar : emptyStar
     }</Star>
 }
 
