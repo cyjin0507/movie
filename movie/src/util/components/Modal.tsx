@@ -31,7 +31,6 @@ export default function Modal(
 
 }
 
-
 const Background = styled.div<{ $isOpen: boolean }>`
   width: 100%;
   height: 100vh;

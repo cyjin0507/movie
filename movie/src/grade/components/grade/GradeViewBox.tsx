@@ -9,16 +9,12 @@ export default function GradeViewBox() {
 
     const findGradeListData = gradeListData[movieCd] ?? {};
 
-    
-    
     const totalScore = findGradeListData.movieScoreList?.reduce((pv, cv)=> {
         return pv + cv.score;
     }, 0)
     
-    
     const totalCount = (findGradeListData.movieScoreList?? []).length;
     const avgScore = isNaN(totalScore / totalCount) ? 0 : (totalScore / totalCount);
-
 
     return <GradeView>
         <h3>평점 : {avgScore.toFixed(2)}점</h3>

@@ -11,7 +11,6 @@ export default function StarInput(
         selectedStarInput: number;
     }
 ) {
-
     
     return <Star onMouseOver={()=>handleStarControl(starNumber)}>{
         selectedStarInput >= starNumber ? '★' : '☆'

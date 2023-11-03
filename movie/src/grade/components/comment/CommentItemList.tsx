@@ -7,10 +7,8 @@ export default function CommentItemList() {
     const commentListData = useRecoilValue(gradeList);
     const movieInfo = useRecoilValue(selectedMovieInfo);
 
-
     const findCommentListData = (commentListData[movieInfo?.movieCd ?? ""] ?? []).movieCommentList ?? [];
     
-
     return <CommentItemListContainer>
         {
             [...findCommentListData].reverse().map((comment, n) => {

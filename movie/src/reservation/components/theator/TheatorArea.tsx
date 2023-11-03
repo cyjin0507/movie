@@ -8,7 +8,6 @@ export default function TheatorArea() {
 
     const movieInfo = useRecoilValue(selectedMovieInfo);
 
-
     return <TheatorSeatContainer>
         <TheatorSideSeat>
             {

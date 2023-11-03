@@ -22,5 +22,5 @@ export default function ReservationMovieInfo() {
 }
 
 const MovieInfoContainer = styled.div`
-    
+
 `

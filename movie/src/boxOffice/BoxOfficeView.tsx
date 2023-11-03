@@ -27,10 +27,8 @@ export default function BoxOfficeView() {
                     <h2>Daily BoxOfiice TOP10</h2>
                     <BoxOfficeList boxOfficeData={boxOfficeList?.boxOfficeResult.dailyBoxOfficeList}/>
                 </BoxOfficeContainer>
-
                 : <Loading />
         }
-        
     </>
 }
 
