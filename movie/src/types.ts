@@ -58,5 +58,5 @@ export interface movieCommentData {
 }
 
 export interface movieCommentList {
-    comment : string,
+    comment : string
 }

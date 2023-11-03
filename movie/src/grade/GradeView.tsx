@@ -17,7 +17,7 @@ export default function GradeView() {
 const GradeContainer = styled.div`
     width: 1220px;
     display: flex;
-    justify-content: space-between;
+    gap: 150px;
     margin: auto;
     margin-top: 50px;
 `
