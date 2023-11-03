@@ -2,27 +2,30 @@ import { useState } from "react"
 import styled from "styled-components"
 import { ENTER_KEY } from "../../../constants";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { commentList, selectedMovieInfo } from "../../../util/recoils/utilRecoil";
+import { gradeList, selectedMovieInfo } from "../../../util/recoils/utilRecoil";
 import Storage from "../../../util/storage";
 
 export default function CommentInput() {
     const [commentInput, setCommentInput] = useState("");
-    const [commentListData, setCommentListData] = useRecoilState(commentList);
+    const [commentListData, setCommentListData] = useRecoilState(gradeList);
     const movieInfo = useRecoilValue(selectedMovieInfo);
     const movieCd = movieInfo?.movieCd ?? "";
 
     const onSaveComment = () => {
         const copyCommentListData = JSON.parse(JSON.stringify(commentListData));
         if(copyCommentListData[movieCd] === undefined) {
-            copyCommentListData[movieCd] = [];
+            copyCommentListData[movieCd] = {
+                movieCommentList : [],
+                movieScoreList : [],
+            };
         }
 
-        copyCommentListData[movieCd].push({
+        copyCommentListData[movieCd].movieCommentList.push({
             comment : commentInput,
         })
         
         setCommentListData(copyCommentListData)
-        Storage.setCommentData(copyCommentListData)
+        Storage.setGradeData(copyCommentListData)
         setCommentInput("")
     }
 

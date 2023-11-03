@@ -1,7 +1,7 @@
-import { movieCommentData, reservationData } from "../types";
+import { movieGradeData, reservationData } from "../types";
 
 export const RESERVATION_STORAGE_KEY = "reservationData";
-export const COMMENT_STORAGE_KEY = "commentData";
+export const GRADE_STORAGE_KEY = "gradeData";
 
 export default class Storage {
     static getReservationData() : reservationData {
@@ -12,12 +12,12 @@ export default class Storage {
         localStorage.setItem(RESERVATION_STORAGE_KEY, JSON.stringify(value));
     }
 
-    static getCommentData() : movieCommentData {
-        return (JSON.parse(localStorage.getItem(COMMENT_STORAGE_KEY) ?? "{}") as movieCommentData);
+    static getGradeData() : movieGradeData {
+        return (JSON.parse(localStorage.getItem(GRADE_STORAGE_KEY) ?? "{}") as movieGradeData);
     }
 
-    static setCommentData(value: movieCommentData) {
-        localStorage.setItem(COMMENT_STORAGE_KEY, JSON.stringify(value));
+    static setGradeData(value: movieGradeData) {
+        localStorage.setItem(GRADE_STORAGE_KEY, JSON.stringify(value));
     }
 }
 

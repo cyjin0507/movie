@@ -2,12 +2,14 @@ import styled from "styled-components"
 import ReservationMovieInfo from "../util/components/ReservationMovieInfo"
 import CommentBox from "./components/comment/CommentBox"
 import GradeBox from "./components/grade/GradeBox"
+import GradeViewBox from "./components/grade/GradeViewBox"
 
 export default function GradeView() {
 
     return <GradeContainer>
         <ReservationMovieInfo />
         <MovieGradeArea>
+            <GradeViewBox />
             <CommentBox />
             <GradeBox />
         </MovieGradeArea>

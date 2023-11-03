@@ -53,10 +53,19 @@ export interface reservationSeatList {
     [seatNumber : string] : boolean
 }
 
-export interface movieCommentData {
-    [movieCd : string] : movieCommentList[]
+export interface movieGradeData {
+    [movieCd : string] : movieGrade
+}
+
+export interface movieGrade {
+    movieCommentList : movieCommentList[];
+    movieScoreList : movieScoreList[];
 }
 
 export interface movieCommentList {
     comment : string
+}
+
+export interface movieScoreList {
+    score : number
 }

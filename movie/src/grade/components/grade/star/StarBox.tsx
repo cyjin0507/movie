@@ -1,12 +1,37 @@
 import styled from "styled-components"
 import StarInput from "./StarInput"
 import { useState } from "react";
+import { gradeList, selectedMovieInfo } from "../../../../util/recoils/utilRecoil";
+import { useRecoilState, useRecoilValue } from "recoil";
+import Storage from "../../../../util/storage";
 
 export default function StarBox() {
     const [selectedStarInput, setSelectedStarInput] = useState(-1);
+    const [gradeListData, setGradeListData] = useRecoilState(gradeList);
+    const movieInfo = useRecoilValue(selectedMovieInfo);
+    const movieCd = movieInfo?.movieCd ?? "";
 
     const handleStarControl = (starNumber: number) => {
         setSelectedStarInput(starNumber);
+    }
+
+    const handleStarSave = () => {
+        const copyGradeListData = JSON.parse(JSON.stringify(gradeListData));
+        if(copyGradeListData[movieCd] === undefined) {
+            copyGradeListData[movieCd] = {
+                movieCommentList : [],
+                movieScoreList : [],
+            };
+        }
+
+        copyGradeListData[movieCd].movieScoreList.push({
+            score : selectedStarInput + 1
+        })
+        
+        alert("평점 등록이 완료되었습니다.");
+        setGradeListData(copyGradeListData);
+        Storage.setGradeData(copyGradeListData);
+        setSelectedStarInput(-1);
     }
 
     return <StarBoxContainer>
@@ -23,6 +48,7 @@ export default function StarBox() {
                 })
             }
         </StarInputList>
+        <StarRegisterBtn onClick={handleStarSave}>평점등록</StarRegisterBtn>
     </StarBoxContainer>
 }
 
@@ -46,4 +72,8 @@ const StarInputList = styled.div`
     display: flex;
     justify-content: space-between;
     width: 200px;    
+`
+
+const StarRegisterBtn = styled.button`
+    background-color: #C40062;
 `

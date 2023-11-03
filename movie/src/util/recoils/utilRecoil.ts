@@ -1,7 +1,7 @@
 import {
     atom,
 } from 'recoil';
-import { AppView, dailyBoxOfficeItem, movieCommentData, reservationData } from '../../types';
+import { AppView, dailyBoxOfficeItem, movieGradeData, reservationData } from '../../types';
 import { APP_VIEW } from '../../constants';
 import Storage from '../storage';
 
@@ -20,9 +20,9 @@ export const reservationList = atom<reservationData>({
     default: {}
 });
 
-export const commentList = atom<movieCommentData>({
-    key : 'commentData',
-    default: Storage.getCommentData()
+export const gradeList = atom<movieGradeData>({
+    key : 'gradeData',
+    default: Storage.getGradeData()
 })
 
 export const keyPadInput = atom({

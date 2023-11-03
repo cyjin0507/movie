@@ -1,14 +1,15 @@
 import { useRecoilValue } from "recoil"
 import styled from "styled-components"
-import { commentList, selectedMovieInfo } from "../../../util/recoils/utilRecoil"
+import { gradeList, selectedMovieInfo } from "../../../util/recoils/utilRecoil"
 import CommentItem from "./CommentItem";
 
 export default function CommentItemList() {
-    const commentListData = useRecoilValue(commentList);
+    const commentListData = useRecoilValue(gradeList);
     const movieInfo = useRecoilValue(selectedMovieInfo);
 
 
-    const findCommentListData = commentListData[movieInfo?.movieCd ?? ""] ?? [];
+    const findCommentListData = (commentListData[movieInfo?.movieCd ?? ""] ?? []).movieCommentList ?? [];
+    
 
     return <CommentItemListContainer>
         {

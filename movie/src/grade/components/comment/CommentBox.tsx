@@ -14,8 +14,9 @@ const CommentBoxContainer = styled.div`
     width: 500px;
     height: 260px;
     background-color: #ffffff11;
-    border-radius: 10px;
+    border-radius: 5px;
     position: relative;
     overflow: hidden;
-    border: 1px solid #5a5a5a;
+    border: 1px solid #343434;
+    margin-top: 10px;
 `
