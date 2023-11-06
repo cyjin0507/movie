@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getBoxOfficeList, getMovieList } from "../util/api"
+import { getBoxOfficeList } from "../util/api"
 import { boxOffice } from "../types";
 import Loading from "../util/components/Loading";
 import BoxOfficeList from "./components/BoxOfficeList";

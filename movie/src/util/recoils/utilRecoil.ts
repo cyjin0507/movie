@@ -1,7 +1,7 @@
 import {
     atom,
 } from 'recoil';
-import { AppView, dailyBoxOfficeItem, movieGradeData, reservationData } from '../../types';
+import { AppView, dailyBoxOfficeItem, movieGradeData, movieListResult, reservationData } from '../../types';
 import { APP_VIEW } from '../../constants';
 import Storage from '../storage';
 
@@ -10,7 +10,7 @@ export const appViewAtom = atom<AppView>({
     default: APP_VIEW.movieList,
 });
 
-export const selectedMovieInfo = atom<dailyBoxOfficeItem | null>({
+export const selectedMovieInfo = atom<movieListResult | null>({
     key: 'selectedMovieInfo',
     default: null
 });

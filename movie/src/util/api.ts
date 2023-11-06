@@ -9,9 +9,7 @@ export async function getBoxOfficeList(targetDate:string) : Promise<boxOffice> {
 const SERVICE_KEY = "DYX6FDA6T09FXA33Q8N9";
 
 export async function getMovieList() : Promise<movieList> {
-    const api = await fetch(`https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&releaseDts=20231105&ServiceKey=${SERVICE_KEY}`);
+    const api = await fetch(`https://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&releaseDts=20210905&ServiceKey=${SERVICE_KEY}`);
     const parse = await api.json();
-    console.log(parse);
-    
     return parse;
 }
