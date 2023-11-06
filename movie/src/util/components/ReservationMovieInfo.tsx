@@ -1,19 +1,19 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { appViewAtom, selectedMovieInfo } from "../recoils/utilRecoil";
 import styled from "styled-components";
-import { APP_VIEW, POSTER_IMAGE_URL } from "../../constants";
+import { APP_VIEW } from "../../constants";
 import MakeReservation from "../../reservation/components/MakeReservation";
 
 export default function ReservationMovieInfo() {
     const movieInfo = useRecoilValue(selectedMovieInfo);
     const setAppView = useSetRecoilState(appViewAtom);
-    const posterURL = POSTER_IMAGE_URL[parseInt(movieInfo?.rank ?? "0") -1].url;
+    const posterURL = movieInfo?.posters;
 
 
     return <MovieInfoContainer>
         <img src={posterURL} alt="" style={{width:"160px", borderRadius:"5px"}}/>
-        <h2>{movieInfo?.movieNm}</h2>
-        <p>{movieInfo?.openDt}</p>
+        <h2>{movieInfo?.title}</h2>
+        <p>{movieInfo?.repRlsDate}</p>
         <button onClick={()=> setAppView(APP_VIEW.movieIntro)}>이전</button>
 
         <MakeReservation />

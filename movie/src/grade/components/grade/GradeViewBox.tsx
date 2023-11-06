@@ -5,9 +5,9 @@ import { gradeList, selectedMovieInfo } from "../../../util/recoils/utilRecoil";
 export default function GradeViewBox() {
     const gradeListData = useRecoilValue(gradeList);
     const movieInfo = useRecoilValue(selectedMovieInfo);
-    const movieCd = movieInfo?.movieCd ?? "";
+    const movieSeq = movieInfo?.movieSeq ?? "";
 
-    const findGradeListData = gradeListData[movieCd] ?? {};
+    const findGradeListData = gradeListData[movieSeq] ?? {};
 
     const totalScore = findGradeListData.movieScoreList?.reduce((pv, cv)=> {
         return pv + cv.score;

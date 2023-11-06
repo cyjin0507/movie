@@ -20,15 +20,11 @@ export default function MovieInfo(
     
     return <MovieInfoContainer>
         <div>
-            <h2>{movieInfo?.movieNm}</h2>
+            <h2>{movieInfo?.title}</h2>
             <div>
                 <p>
                     <span>개봉일 : </span>
-                    {movieInfo?.openDt}
-                </p>
-                <p>
-                    <span>누적 관람객 : </span>
-                    {movieInfo?.audiAcc}명
+                    {movieInfo?.repRlsDate}
                 </p>
             </div>
         </div>

@@ -2,6 +2,8 @@ import { movieListResult } from "../../types"
 import { responsive } from "../../constants";
 import MovieItem from "./MovieItem";
 import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 
 export default function MovieList(
     {
@@ -10,7 +12,6 @@ export default function MovieList(
         movieListData: movieListResult[];
     }
 ) {
-
 
 
     return (

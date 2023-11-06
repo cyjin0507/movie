@@ -1,9 +1,8 @@
 import { useSetRecoilState } from "recoil";
-import { APP_VIEW } from "../../constants";
+import { APP_VIEW, addDefaultImg } from "../../constants";
 import { movieListResult } from "../../types";
 import { appViewAtom, selectedMovieInfo } from "../../util/recoils/utilRecoil";
 import styled from "styled-components";
-import { SyntheticEvent } from "react";
 
 export default function MovieItem(
     {
@@ -19,12 +18,6 @@ export default function MovieItem(
         setAppView(APP_VIEW.movieIntro)
         setSelectedMovieInfo(movieInfo)
     }
-    console.log(movieInfo.posters);
-
-    const addDefaultImg = (e : SyntheticEvent<HTMLImageElement, Event>) => {
-        e.currentTarget.src = "https://geojecci.korcham.net/images/no-image01.gif";
-    }
-    
 
     return <div className="slider" onClick={handleMoveMovieIntroView} onDrag={(e)=> e.preventDefault()}>
         <img src={movieInfo.posters} onError={addDefaultImg} alt="movie"/>
@@ -32,18 +25,18 @@ export default function MovieItem(
             <h5>{movieInfo.title}</h5>
             <p>{movieInfo.repRatDate}</p>
         </MoviceInfoContainer>
-        <Rank>1</Rank>
+        {/* <Rank>1</Rank> */}
     </div>
 }
 
-const Rank = styled.div`
-    font-size: 30px;
-    position: absolute;
-    top: 0;
-    left: 10px;
-    font-weight: bold;
-    font-size: 50px;
-`
+// const Rank = styled.div`
+//     font-size: 30px;
+//     position: absolute;
+//     top: 0;
+//     left: 10px;
+//     font-weight: bold;
+//     font-size: 50px;
+// `
 
 const MoviceInfoContainer = styled.div`
     position: absolute;

@@ -1,8 +1,8 @@
 import Storage from "../util/storage";
 
-export function getSeatReservationStatus(seatNumber : string, movieCd : string) {
+export function getSeatReservationStatus(seatNumber : string, movieSeq : string) {
     const getReservationData = Storage.getReservationData()   
     
-    if(getReservationData[movieCd] === undefined) return false
-    return getReservationData[movieCd][seatNumber] ? true : false
+    if(getReservationData[movieSeq] === undefined) return false
+    return getReservationData[movieSeq][seatNumber] ? true : false
 }

@@ -9,7 +9,7 @@ export default function StarBox() {
     const [selectedStarInput, setSelectedStarInput] = useState(-1);
     const [gradeListData, setGradeListData] = useRecoilState(gradeList);
     const movieInfo = useRecoilValue(selectedMovieInfo);
-    const movieCd = movieInfo?.movieCd ?? "";
+    const movieSeq = movieInfo?.movieSeq ?? "";
 
     const handleStarControl = (starNumber: number) => {
         setSelectedStarInput(starNumber);
@@ -23,14 +23,14 @@ export default function StarBox() {
             return;
         }
 
-        if(copyGradeListData[movieCd] === undefined) {
-            copyGradeListData[movieCd] = {
+        if(copyGradeListData[movieSeq] === undefined) {
+            copyGradeListData[movieSeq] = {
                 movieCommentList : [],
                 movieScoreList : [],
             };
         }
 
-        copyGradeListData[movieCd].movieScoreList.push({
+        copyGradeListData[movieSeq].movieScoreList.push({
             score : selectedStarInput + 1
         })
         

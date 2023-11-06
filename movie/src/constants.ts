@@ -1,3 +1,5 @@
+import { SyntheticEvent } from "react";
+
 export const VIDEO_URL = "/video.mp4";
 
 export const APP_VIEW = {
@@ -73,3 +75,7 @@ export const responsive = {
     slidesToSlide: 1 // optional, default to 1.
   }
 };
+
+export const addDefaultImg = (e : SyntheticEvent<HTMLImageElement, Event>) => {
+  e.currentTarget.src = "https://via.placeholder.com/150x212.jpg";
+}

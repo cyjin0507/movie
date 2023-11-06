@@ -10,23 +10,23 @@ export default function MakeReservation() {
 
     const copyReservationData = JSON.parse(JSON.stringify(reservationData)); // 이게 맞나
 
-    if (copyReservationData[movieInfo?.movieCd ?? ""] === undefined) {
-        copyReservationData[movieInfo?.movieCd ?? ""] = {}
+    if (copyReservationData[movieInfo?.movieSeq ?? ""] === undefined) {
+        copyReservationData[movieInfo?.movieSeq ?? ""] = {}
     }
 
-    const myReservationList = copyReservationData[movieInfo?.movieCd ?? ""];
+    const myReservationList = copyReservationData[movieInfo?.movieSeq ?? ""];
     const ReservationArr = Object.entries(myReservationList);
 
     const handleCancelReservation = (seatNumber: string) => {
-        copyReservationData[movieInfo?.movieCd ?? ""][seatNumber] = false
+        copyReservationData[movieInfo?.movieSeq ?? ""][seatNumber] = false
         setReservationData(copyReservationData)
     }
 
     const handleSaveReservation = () => {
         const basicData = Storage.getReservationData();
         
-        Object.assign(copyReservationData[movieInfo?.movieCd ?? ""], basicData[movieInfo?.movieCd ?? ""])
-        basicData[movieInfo?.movieCd ?? ""] = copyReservationData[movieInfo?.movieCd ?? ""]
+        Object.assign(copyReservationData[movieInfo?.movieSeq ?? ""], basicData[movieInfo?.movieSeq ?? ""])
+        basicData[movieInfo?.movieSeq ?? ""] = copyReservationData[movieInfo?.movieSeq ?? ""]
         
         alert("예매가 완료되었습니다.");
         setReservationData({});

@@ -6,32 +6,32 @@ import { getSeatReservationStatus } from "../../reservationStorageController";
 export default function TheatorSeat(
     {
         seatNumber,
-        movieCd,
+        movieSeq,
     } : {
         seatNumber : string;
-        movieCd : string | undefined;
+        movieSeq : string | undefined;
     }
 ) {
     const [reservationData, setReservationData] = useRecoilState(reservationList);
     const copyReservationData = JSON.parse(JSON.stringify(reservationData)); // 이게 맞나
 
-    if(copyReservationData[movieCd ?? ""] === undefined) {
-        copyReservationData[movieCd ?? ""] = {}
+    if(copyReservationData[movieSeq ?? ""] === undefined) {
+        copyReservationData[movieSeq ?? ""] = {}
     }
 
     let reservationState = false;
-    if(copyReservationData[movieCd ?? ""][seatNumber] === undefined || !copyReservationData[movieCd ?? ""][seatNumber]) {
+    if(copyReservationData[movieSeq ?? ""][seatNumber] === undefined || !copyReservationData[movieSeq ?? ""][seatNumber]) {
         reservationState = false;
     } else {
         reservationState = true;
     }
 
     const temporarySeatReservation = () => {
-        copyReservationData[movieCd ?? ""][seatNumber] = !reservationState
+        copyReservationData[movieSeq ?? ""][seatNumber] = !reservationState
         setReservationData(copyReservationData)
     }
 
-    return <Seat onClick={temporarySeatReservation} disabled={getSeatReservationStatus(seatNumber, movieCd ?? "")} $state={reservationState}>
+    return <Seat onClick={temporarySeatReservation} disabled={getSeatReservationStatus(seatNumber, movieSeq ?? "")} $state={reservationState}>
         {seatNumber}
     </Seat>
 }

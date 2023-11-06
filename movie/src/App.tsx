@@ -1,5 +1,5 @@
 import './App.css'
-import BoxOfficeView from './boxOffice/BoxOfficeView'
+// import BoxOfficeView from './boxOffice/BoxOfficeView'
 import { useRecoilValue } from "recoil";
 import { appViewAtom } from './util/recoils/utilRecoil';
 import { APP_VIEW } from './constants';
@@ -15,8 +15,8 @@ function App() {
     {
       appView === APP_VIEW.movieList
                   ? <>
-                    <BoxOfficeView />
                     <MovieListView />
+                    {/* <BoxOfficeView /> */}
                   </>
                   : appView === APP_VIEW.movieIntro
                     ? <MovieIntroView />
