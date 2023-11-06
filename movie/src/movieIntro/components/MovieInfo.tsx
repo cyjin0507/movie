@@ -1,67 +1,65 @@
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { appViewAtom, selectedMovieInfo } from "../../util/recoils/utilRecoil";
+import { useRecoilValue } from "recoil"
+import { selectedMovieInfo } from "../../util/recoils/utilRecoil"
 import styled from "styled-components";
-import { APP_VIEW } from "../../constants";
+import { addDefaultImg } from "../../constants";
 
-export default function MovieInfo(
-    {
-        setIsSecurityModal,
-    } : {
-        setIsSecurityModal : (bool : boolean)=> void;
-    }
-) {
-    const [movieInfo, unselectedMovieInfo] = useRecoilState(selectedMovieInfo);
-    const setAppView = useSetRecoilState(appViewAtom);
-
-    const handleMovieListPage = () => {
-        unselectedMovieInfo(null);
-        setAppView(APP_VIEW.movieList);
-    }
+export default function MovieInfo() {
+    const movieInfo = useRecoilValue(selectedMovieInfo);
     
+
     return <MovieInfoContainer>
+        <img src={movieInfo?.posters} onError={addDefaultImg} alt=""  style={{width:"160px", borderRadius:"5px"}} />
+        <p>{movieInfo?.plots.plot[0].plotText}</p>
         <div>
-            <h2>{movieInfo?.title}</h2>
-            <div>
-                <p>
-                    <span>개봉일 : </span>
-                    {movieInfo?.repRlsDate}
-                </p>
+            <p>
+                상영시간 : <span>{movieInfo?.runtime}분</span>
+            </p>
+            <p>
+                제작년도 : <span>{movieInfo?.prodYear}년</span>
+            </p>
+            <p>
+                감독 : <span>{movieInfo?.directors.director[0].directorNm}</span>
+            </p>
+            <div className="actors">
+                <div>배우 : </div> <div>
+                    {
+                        movieInfo?.actors.actor.map((actor)=> {
+                            return <><span>{actor.actorNm}</span><br /></>;
+                        })
+                    }
+                 </div>
             </div>
-        </div>
-        <div>
-            <div>
-                <button onClick={()=>setIsSecurityModal(true)}>예매하기</button>
-                <button onClick={()=>setAppView(APP_VIEW.movieGrade)}>평점작성</button>
-                <button onClick={handleMovieListPage}>닫기</button>
-            </div>
+            <p>
+                장르 : <span>{movieInfo?.genre}</span>
+            </p>
         </div>
     </MovieInfoContainer>
 }
 
 const MovieInfoContainer = styled.div`
-    width: 900px;
-    display: flex;
-    justify-content: space-between;
+    width: 350px;
+    height: 90vh;
+    overflow-y: auto;
 
-    ${'span'} {
-        font-size: 12px;
+    &::-webkit-scrollbar {
+        display: none;
     }
 
-    & > ${'div'}:nth-child(2) > ${'div'} {
+    ${'> div'} {
+        margin-top: 30px;
+    }
+
+    ${'p'} {
+        opacity: .8;
+
+        ${'span'} {
+            font-weight: bold;
+            opacity: 1;
+        }
+    }
+
+    ${'.actors'} {
         display: flex;
-        gap: 20px;
-        margin-top: 15px;
-    }
-
-    ${'button'}:nth-child(1) {
-        background-color: #c40062;
-        width: 120px;
-    }
-
-    ${'button'}:nth-child(2) {
-        border: 2px solid #c40062;
-        background-color: #ffffffd5;
-        color: #c40062;
-        width: 120px;
+        gap: 10px;
     }
 `

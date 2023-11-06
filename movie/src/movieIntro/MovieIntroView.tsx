@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import MovieInfo from "./components/MovieInfo";
+import MovieIntroMenu from "./components/MovieIntroMenu";
 import MovieIntroVideoBox from "./components/MovieIntroVideoBox";
 import { useState } from "react";
 import SecurityModal from "../util/components/security/SecurityModal";
 import { appViewAtom } from "../util/recoils/utilRecoil";
 import { useSetRecoilState } from "recoil";
 import { APP_VIEW } from "../constants";
+import MovieInfo from "./components/MovieInfo";
 
 export default function MovieIntroView() {
     const [isSecurityModal, setIsSecurityModal] = useState(false);
@@ -18,17 +19,22 @@ export default function MovieIntroView() {
 
     return <>
         <MovieIntroContainer>
-            <MovieIntroVideoBox />
-            <MovieInfo 
-                setIsSecurityModal={setIsSecurityModal}
-            />
+            <div>
+                <MovieIntroVideoBox />
+                <MovieIntroMenu
+                    setIsSecurityModal={setIsSecurityModal}
+                />
+            </div>
+            <MovieInfo />
         </MovieIntroContainer>
         <SecurityModal isOpen={isSecurityModal} handleOnClose={setIsSecurityModal} sendEvent={handleMoveReservationPage} />
     </>
 }
 
 const MovieIntroContainer = styled.div`
-    width: 1200px;
+    width: 1400px;
     margin: auto;
     margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
 `
