@@ -5,10 +5,9 @@ import { addDefaultImg } from "../../constants";
 
 export default function MovieInfo() {
     const movieInfo = useRecoilValue(selectedMovieInfo);
-    
 
     return <MovieInfoContainer>
-        <img src={movieInfo?.posters} onError={addDefaultImg} alt=""  style={{width:"160px", borderRadius:"5px"}} />
+        <img src={movieInfo?.posters.split('|')[0]} onError={addDefaultImg} alt=""  style={{width:"160px", borderRadius:"5px"}} />
         <p>{movieInfo?.plots.plot[0].plotText}</p>
         <div>
             <p>
@@ -21,10 +20,11 @@ export default function MovieInfo() {
                 감독 : <span>{movieInfo?.directors.director[0].directorNm}</span>
             </p>
             <div className="actors">
-                <div>배우 : </div> <div>
+                <div>배우 : </div>
+                <div>
                     {
-                        movieInfo?.actors.actor.map((actor)=> {
-                            return <><span>{actor.actorNm}</span><br /></>;
+                        movieInfo?.actors.actor.map((actor, index)=> {
+                            return <div key={index}><span>{actor.actorNm}</span><br /></div>;
                         })
                     }
                  </div>

@@ -15,15 +15,15 @@ export default function MovieItem(
     const setSelectedMovieInfo = useSetRecoilState(selectedMovieInfo);
 
     const handleMoveMovieIntroView = () => {
-        setAppView(APP_VIEW.movieIntro)
-        setSelectedMovieInfo(movieInfo)
+        setAppView(APP_VIEW.movieIntro);
+        setSelectedMovieInfo(movieInfo);
     }
 
     return <div className="slider" onClick={handleMoveMovieIntroView} onDrag={(e)=> e.preventDefault()}>
-        <img src={movieInfo.posters} onError={addDefaultImg} alt="movie"/>
+        <img src={movieInfo.posters.split('|')[0]} onError={addDefaultImg} alt="movie"/>
         <MoviceInfoContainer>
-            <h5>{movieInfo.title}</h5>
-            <p>{movieInfo.repRatDate}</p>
+            <h5>{movieInfo.title.replace(/!HS/gi, '').replace(/!HE/gi, '')}</h5>
+            <p>{movieInfo.repRlsDate}</p>
         </MoviceInfoContainer>
         {/* <Rank>1</Rank> */}
     </div>

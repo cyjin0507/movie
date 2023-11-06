@@ -79,3 +79,5 @@ export const responsive = {
 export const addDefaultImg = (e : SyntheticEvent<HTMLImageElement, Event>) => {
   e.currentTarget.src = "https://via.placeholder.com/150x212.jpg";
 }
+
+export const GENRE_LIST = ["드라마", "코메디", "액션", "공포"];

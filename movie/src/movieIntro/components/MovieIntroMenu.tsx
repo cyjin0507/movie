@@ -17,10 +17,10 @@ export default function MovieIntroMenu(
         unselectedMovieInfo(null);
         setAppView(APP_VIEW.movieList);
     }
-    
+
     return <MovieInfoContainer>
         <div>
-            <h2>{movieInfo?.title}</h2>
+            <h2>{movieInfo?.title.replace(/!HS/gi, '').replace(/!HE/gi, '')}</h2>
             <div>
                 <p>
                     <span>개봉일 : </span>
