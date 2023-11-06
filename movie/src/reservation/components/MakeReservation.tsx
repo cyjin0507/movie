@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { reservationList, selectedMovieInfo } from "../../util/recoils/utilRecoil";
+import { reservationList, selectedMovieInfo } from "../../util/recoil";
 import { useRecoilState, useRecoilValue } from "recoil";
 import SelectedSeatNumber from "./SelectedSeatNumber";
 import Storage from "../../util/storage";

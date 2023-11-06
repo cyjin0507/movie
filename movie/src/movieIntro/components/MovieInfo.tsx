@@ -1,5 +1,5 @@
 import { useRecoilValue } from "recoil"
-import { selectedMovieInfo } from "../../util/recoils/utilRecoil"
+import { selectedMovieInfo } from "../../util/recoil"
 import styled from "styled-components";
 import { addDefaultImg } from "../../constants";
 

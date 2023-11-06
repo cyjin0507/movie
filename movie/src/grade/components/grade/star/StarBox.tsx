@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import StarInput from "./StarInput"
 import { useState } from "react";
-import { gradeList, selectedMovieInfo } from "../../../../util/recoils/utilRecoil";
+import { gradeList, selectedMovieInfo } from "../../../../util/recoil";
 import { useRecoilState, useRecoilValue } from "recoil";
 import Storage from "../../../../util/storage";
 

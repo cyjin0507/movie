@@ -1,9 +1,9 @@
 import {
     atom,
 } from 'recoil';
-import { AppView, dailyBoxOfficeItem, movieGradeData, movieListResult, reservationData } from '../../types';
-import { APP_VIEW } from '../../constants';
-import Storage from '../storage';
+import { AppView, dailyBoxOfficeItem, movieGradeData, movieListResult, reservationData } from '../types';
+import { APP_VIEW } from '../constants';
+import Storage from './storage';
 
 export const appViewAtom = atom<AppView>({
     key: 'appView',

@@ -2,7 +2,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import { ENTER_KEY } from "../../../constants";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { gradeList, selectedMovieInfo } from "../../../util/recoils/utilRecoil";
+import { gradeList, selectedMovieInfo } from "../../../util/recoil";
 import Storage from "../../../util/storage";
 
 export default function CommentInput() {

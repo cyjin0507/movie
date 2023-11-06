@@ -1,7 +1,7 @@
 import './App.css'
 // import BoxOfficeView from './boxOffice/BoxOfficeView'
 import { useRecoilValue } from "recoil";
-import { appViewAtom } from './util/recoils/utilRecoil';
+import { appViewAtom } from './util/recoil';
 import { APP_VIEW } from './constants';
 import MovieIntroView from './movieIntro/MovieIntroView';
 import ReservationView from './reservation/ReservationView';

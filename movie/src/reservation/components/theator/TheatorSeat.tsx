@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { reservationList } from "../../../util/recoils/utilRecoil";
+import { reservationList } from "../../../util/recoil";
 import { useRecoilState } from "recoil";
 import { getSeatReservationStatus } from "../../reservationStorageController";
 

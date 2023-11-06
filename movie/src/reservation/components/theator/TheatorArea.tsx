@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import TheatorSeat from "./TheatorSeat";
 import { useRecoilValue } from "recoil";
-import { selectedMovieInfo } from "../../../util/recoils/utilRecoil";
+import { selectedMovieInfo } from "../../../util/recoil";
 
 export default function TheatorArea() {
     const row = 10;

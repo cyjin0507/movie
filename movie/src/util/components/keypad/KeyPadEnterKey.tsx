@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 import styled from "styled-components"
-import { keyPadInput } from "../../recoils/utilRecoil";
+import { keyPadInput } from "../../recoil";
 
 export default function KeyPadEnterKey(
     {

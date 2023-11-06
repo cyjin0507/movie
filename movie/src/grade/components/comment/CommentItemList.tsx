@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil"
 import styled from "styled-components"
-import { gradeList, selectedMovieInfo } from "../../../util/recoils/utilRecoil"
+import { gradeList, selectedMovieInfo } from "../../../util/recoil"
 import CommentItem from "./CommentItem";
 
 export default function CommentItemList() {

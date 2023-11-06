@@ -1,5 +1,5 @@
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { appViewAtom, selectedMovieInfo } from "../../util/recoils/utilRecoil";
+import { appViewAtom, selectedMovieInfo } from "../../util/recoil";
 import styled from "styled-components";
 import { APP_VIEW } from "../../constants";
 

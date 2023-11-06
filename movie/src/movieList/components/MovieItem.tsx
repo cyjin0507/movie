@@ -1,7 +1,7 @@
 import { useSetRecoilState } from "recoil";
 import { APP_VIEW, addDefaultImg } from "../../constants";
 import { movieListResult } from "../../types";
-import { appViewAtom, selectedMovieInfo } from "../../util/recoils/utilRecoil";
+import { appViewAtom, selectedMovieInfo } from "../../util/recoil";
 import styled from "styled-components";
 
 export default function MovieItem(

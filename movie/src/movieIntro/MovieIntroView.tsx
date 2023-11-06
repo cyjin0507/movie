@@ -3,7 +3,7 @@ import MovieIntroMenu from "./components/MovieIntroMenu";
 import MovieIntroVideoBox from "./components/MovieIntroVideoBox";
 import { useState } from "react";
 import SecurityModal from "../util/components/security/SecurityModal";
-import { appViewAtom } from "../util/recoils/utilRecoil";
+import { appViewAtom } from "../util/recoil";
 import { useSetRecoilState } from "recoil";
 import { APP_VIEW } from "../constants";
 import MovieInfo from "./components/MovieInfo";
