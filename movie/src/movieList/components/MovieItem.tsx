@@ -7,8 +7,10 @@ import styled from "styled-components";
 export default function MovieItem(
     {
         movieInfo,
+        rank,
     } : {
         movieInfo : movieListResult;
+        rank : number;
     }
 ) {
     const setAppView = useSetRecoilState(appViewAtom);
@@ -25,18 +27,18 @@ export default function MovieItem(
             <h5>{movieInfo.title.replace(/!HS/gi, '').replace(/!HE/gi, '')}</h5>
             <p>{movieInfo.repRlsDate}</p>
         </MoviceInfoContainer>
-        {/* <Rank>1</Rank> */}
+        <Rank>{rank}</Rank>
     </div>
 }
 
-// const Rank = styled.div`
-//     font-size: 30px;
-//     position: absolute;
-//     top: 0;
-//     left: 10px;
-//     font-weight: bold;
-//     font-size: 50px;
-// `
+const Rank = styled.div`
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-weight: bold;
+    font-size: 50px;
+`
 
 const MoviceInfoContainer = styled.div`
     position: absolute;

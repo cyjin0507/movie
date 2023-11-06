@@ -64,4 +64,8 @@ const MovieInfoContainer = styled.div`
         color: #c40062;
         width: 120px;
     }
+
+    ${'p'} {
+        line-height: 0;
+    }
 `

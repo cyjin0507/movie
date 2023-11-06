@@ -29,7 +29,7 @@ export default function MovieList(
             >
                 {
                     movieListData.map((movieItem, index) => {
-                        return <MovieItem movieInfo={movieItem} key={index} />
+                        return <MovieItem movieInfo={movieItem} key={index} rank={index+1} />
                     })
                 }
             </Carousel>
