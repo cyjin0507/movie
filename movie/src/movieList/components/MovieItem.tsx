@@ -23,10 +23,10 @@ export default function MovieItem(
 
     return <div className="slider" onClick={handleMoveMovieIntroView} onDrag={(e)=> e.preventDefault()}>
         <img src={movieInfo.posters.split('|')[0]} onError={addDefaultImg} alt="movie"/>
-        <MoviceInfoContainer>
+        <MovieInfoContainer>
             <h5>{movieInfo.title.replace(/!HS/gi, '').replace(/!HE/gi, '')}</h5>
             <p>{movieInfo.repRlsDate}</p>
-        </MoviceInfoContainer>
+        </MovieInfoContainer>
         <Rank>{rank}</Rank>
     </div>
 }
@@ -40,7 +40,7 @@ const Rank = styled.div`
     font-size: 50px;
 `
 
-const MoviceInfoContainer = styled.div`
+const MovieInfoContainer = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;

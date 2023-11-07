@@ -18,15 +18,14 @@ export default function MovieListView() {
         setGenreMovieList({ ...apiMovieList });
     }
 
-    async function getSearchMovieList(title : string) {
-        if(title === "") {
+    async function getSearchMovieList(title: string) {
+        if (title === "") {
             setSearchMovieList(null);
         } else {
-            const apiMovieList = await getTitleMovieList(title)
+            const apiMovieList = await getTitleMovieList(title);
 
-            setSearchMovieList({...apiMovieList});
+            setSearchMovieList({ ...apiMovieList });
         }
-        
     }
 
     useEffect(() => {
@@ -42,7 +41,7 @@ export default function MovieListView() {
             genreMovieList ?
                 <MovieListContainer>
                     <SearchListArea>
-                        <input type="text" placeholder="원하는 영화를 입력해주세요." onChange={(e)=>getSearchMovieList(e.target.value)}/>
+                        <input type="text" placeholder="원하는 영화를 입력해주세요." onChange={(e) => getSearchMovieList(e.target.value)} />
                         {
                             searchMovieList ?
                                 <MovieList movieListData={searchMovieList.Data[0].Result ?? []} />
@@ -87,7 +86,7 @@ const MovieOptions = styled.div`
         font-size: 25px;
     }
 
-    ${'select'} {
+    > select {
         width: 100px;
         font-size: 18px;
         padding-left: 10px;
